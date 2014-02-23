@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import <AVFoundation/AVFoundation.h>
 @interface ljrAppDelegate : UIResponder <UIApplicationDelegate>
-
+{
+    AVAudioPlayer *player;
+    
+}
 @property (strong, nonatomic) UIWindow *window;
-
+- (void)fuck;
 @end

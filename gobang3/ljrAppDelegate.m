@@ -12,10 +12,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    // Start background music.
+    NSString *soundPath = [[NSBundle mainBundle] pathForResource:@"bgSound" ofType:@"mp3"];
+    NSURL *soundURL = [[NSURL alloc] initFileURLWithPath:soundPath];
+    player = [[AVAudioPlayer alloc] initWithContentsOfURL:soundURL error:nil];
+    [player prepareToPlay];
+    [player play];
     return YES;
 }
 
